@@ -1,0 +1,70 @@
+<!HTMLDocument>
+<html ng-app=kingdomApp>
+<head>
+<meta charset="utf-8">
+<base href="/">
+<title>Kingmaker v0.1</title>
+
+<!-- AngularJS -->
+<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Twitter Bootstrap -->
+<!-- Latest compiled and minified CSS-->
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Font Awesome -->
+<link rel=stylesheet type="text/css" href='/bower_components/components-font-awesome/css/font-awesome.min.css'>
+
+<!-- UnderscoreJS -->
+<script type="text/javascript" src="/bower_components/underscore/underscore-min.js"></script>
+
+<!-- My custom stylesheet -->
+<link rel=stylesheet type="text/css" href='/style/hex.css'>
+
+<!-- my JS -->
+<script src=/scripts/Kingmaker.js></script>
+<script src=/scripts/worldMapController.js></script>
+<script src=/scripts/menuController.js></script>
+<script src=/scripts/summaryController.js></script>
+</head>
+
+<body>
+<div class="container">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid" ng-controller="menuController">
+<div class="navbar-header">
+<a class="navbar-brand" href="">Kingmaker</a>
+</div>
+<ul class="nav navbar-nav">
+    <li><a href="/kingdom">Kingdom</a></li>
+    <li><a href="/hex">World Map</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Cities
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li ng-repeat="city in cities"><a href="">{{city}}</a></li>
+        </ul></li>
+    <li><a href="">Leaders</a></li>
+    <li><a href="">Adventurers</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><b>Turn {{turn}}:</b> {{phases[phase]['name']}}</a>
+        <ul class="dropdown-menu">
+            <li id="EndStep" ng-click="EndStep()"><a href="">End Step:<br /><i>{{phases[phase]['steps'][step]}}</i></a></li>
+        </ul>
+    </li>
+</ul>
+</div>
+</nav>
+<div id="content">
+    <!-- Begin World Map -->
+<!-- Render the hex map inside of a div block -->
+<div class="row" ng-view>
+</div>
+<!-- End World Map --></div>
+</div>
+</body>
+</html>

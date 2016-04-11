@@ -1,0 +1,85 @@
+  <div ng-click="hexClick(e)" class="span9" id='hexmap'>
+  <!-- Begin Navigation Arrows -->
+    <span ng-click="arrow('left')" class="left arrow"><i class="horiz fa fa-caret-left"></i></span>
+    <span ng-click="arrow('right')" class="right arrow"><i class="horiz fa fa-caret-right"></i></span>
+    <span ng-click="arrow('up')" class="up arrow"><i class="fa fa-caret-up"></i></span>
+    <span ng-click="arrow('down')" class="down arrow"><i class="fa fa-caret-down"></i></span>
+  <!-- End Navigation Arrows -->
+  </div>
+
+  <div class="span3">
+    <div class='selection'>
+      <form>
+          <button class="btn btn-default btn-primary chess" id="btn-select" title="Select Hex" ng-click="mode('select')" href="#"><img src="/static/images/interface/pawn.svg"></button>
+          <button class="btn btn-default chess" id="btn-army" title="Select Armies" ng-click="mode('army')" href="#"><img src="/static/images/interface/knight.svg"></button>
+          <button class="btn btn-default chess" id="btn-culture" title="Select Culture / Religion" ng-click="mode('culture')" href="#"><img src="/static/images/interface/bishop.svg"></button>
+          <button class="btn btn-default chess" id="btn-improvements" title="Select Settlments / Improvements" ng-click="mode('improvements')" href="#"><img src="/static/images/interface/rook.svg" style="width: 24px; height: 24px;"></button>
+          <button class="btn btn-default chess" id="btn-distance" title="Measure Distance" ng-click="mode('distance')" href="#"><img src="/static/images/interface/queen.svg"></button>
+          <button class="btn btn-default chess" id="btn-kingdom" title="Select Kingdom" ng-click="mode('kingdom')" href="#"><img src="/static/images/interface/king.svg"></button>
+          <br /><br />
+        <label><b>X</b></label><input style="width:20%;" step="2" min="0" max={{MAP_WIDTH}} type="number" ng-model=off_x id="X_AXIS" />
+        <label><b>Y</b></label><input style="width:20%;" step="2" min="0" max={{MAP_HEIGHT}} type="number" ng-model=off_y id="Y_AXIS" />
+        <button class="btn btn-primary" ng-click="goButton()">Go</button>
+      </form>
+
+      <p>
+        <button class="btn btn-success hex-control" ng-click="coordToggle()" id="coord-check"><b>X,Y</b></button>
+      </p>
+
+      <p class="infobox select army culture improvements distance kingdom">
+        <b>Selection:</b> <span id='selection-hex'></span>
+      </p>
+
+      <p class="infobox distance">
+        <b>Target:</b> <span id='target-hex'></span>
+      </p>
+    
+      <p class="infobox distance">
+        <b>Distance:</b> <span id='distance-hex'></span>
+      </p>
+    
+      <p class="infobox distance">
+        <b>Movement:</b> <span id='movement-hex'></span>
+      </p>
+      
+      <p class="infobox distance">
+        <b>Vision:</b> <span id='vision-hex'></span>
+      </p>
+
+      <p class="infobox army">
+        <b>Armies:</b> <span id='armies-hex'></span>
+      </p>
+
+      <p class='infobox culture'>
+        <b>Culture:</b> <span id='culture-hex'></span>
+      </p>
+
+      <p class='infobox culture'>
+        <b>Religion:</b> <span id='religion-hex'></span>
+      </p>
+
+      <p class='infobox improvements'>
+        <b>Improvements:</b> <span id='improvements-hex'></span>
+      </p>
+
+      <p class='infobox kingdom'>
+        <b>County:</b> <span id='county-hex'></span>
+      </p>
+
+      <p class='infobox kingdom'>
+        <b>Duchy:</b> <span id='duchy-hex'></span>
+      </p>
+
+      <p class='infobox kingdom'>
+        <b>Kingdom:</b> <span id='kingdom-hex'></span>
+      </p>
+
+      <p class="infobox select">
+        <b>Type:</b> <span id='selection-type'></span>
+      </p>
+
+      <p class="infobox select kingdom">
+        <b>Description:</b> <span id='selection-desc'></span>
+      </p>
+    </div>
+  </div>

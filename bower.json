@@ -1,0 +1,16 @@
+{
+  "name": "kingmaker",
+  "description": "Kingmaker",
+  "version": "0.1.31",
+  "homepage": "https://github.com/angular/angular-phonecat",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1",
+    "jquery": "~2",
+    "bootstrap": "~3",
+    "angular-route": "~1",
+    "components-font-awesome": "~4",
+    "underscore": "~1"
+  }
+}
